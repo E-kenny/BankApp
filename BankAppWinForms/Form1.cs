@@ -413,6 +413,10 @@ namespace BankAppWinForms
         {
             Menu.Show();
             Transfer.Hide();
+            TransferFrom.Text = "";
+            TransferTo.Text = "";
+            TransferAmount.Text = "";
+            TransferDescription.Text = "";
         }
 
         private void MakeWithdrawal_Click(object sender, EventArgs e)
@@ -449,12 +453,19 @@ namespace BankAppWinForms
         {
             Menu.Show();
             Withdrawal.Hide();
+            WithdrawalAccount.Text = "";
+            WithdrawalAmount.Text = "";
+            WithdrawalDescription.Text = "";
+
         }
 
         private void DepositBack_Click(object sender, EventArgs e)
         {
             Menu.Show();
             Deposit.Hide();
+            DepositAccount.Text = "";
+            DepositAmount.Text = "";
+            DepositDescription.Text = "";
         }
 
         private void MakeDeposit_Click(object sender, EventArgs e)
