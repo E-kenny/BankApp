@@ -355,7 +355,7 @@ namespace BankAppWinForms
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(172, 32);
             this.button7.TabIndex = 12;
-            this.button7.Text = "Account Statement";
+            this.button7.Text = "Account Details";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -364,7 +364,7 @@ namespace BankAppWinForms
             this.button6.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button6.Location = new System.Drawing.Point(8, 176);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(81, 33);
+            this.button6.Size = new System.Drawing.Size(81, 44);
             this.button6.TabIndex = 11;
             this.button6.Text = "Transfer";
             this.button6.UseVisualStyleBackColor = false;
@@ -396,9 +396,9 @@ namespace BankAppWinForms
             this.button3.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button3.Location = new System.Drawing.Point(95, 176);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 33);
+            this.button3.Size = new System.Drawing.Size(98, 44);
             this.button3.TabIndex = 8;
-            this.button3.Text = "Account Details";
+            this.button3.Text = "Account Statement";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
