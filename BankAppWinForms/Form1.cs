@@ -575,8 +575,6 @@ namespace BankAppWinForms
                         item.SubItems.Add(account.Number);
 
 
-
-
                         decimal balance = 0;
                         if (account.Id == transaction.AccountId)
                             balance += transaction.Amount;
