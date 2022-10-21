@@ -10,9 +10,11 @@ namespace BankAppWinForm.Services.Implementations
         List<Customer> customers = new List<Customer>();
 
         public ICustomerRepo _customerRepo;
-        public CustomerService(ICustomerRepo customerRepo)
+        public IBankAccountRepository _bankAccountRepository;
+        public CustomerService(ICustomerRepo customerRepo, IBankAccountRepository bankAccount)
         {
             _customerRepo = customerRepo;
+            _bankAccountRepository = bankAccount;
         }
         
         public Response Register(string firstName, string lastName, string email, string password)
@@ -29,7 +31,10 @@ namespace BankAppWinForm.Services.Implementations
         public  Response logIn(string email, string password)
         {
                 Customer customer = null;
+                List<BankAccount> bankAccount = new List<BankAccount>();
+                
                 customers = _customerRepo.ReadAllCustomers();
+                             
 
                 foreach (var customer1 in customers)
                 {
@@ -43,7 +48,7 @@ namespace BankAppWinForm.Services.Implementations
                 }
 
 
-                return new Response() { status = "Successful", message="Authenticated", customer =customer };
+                return new Response() { status = "Successful", message="Authenticated", customer = customer };
         }
 
 

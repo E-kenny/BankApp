@@ -26,7 +26,7 @@ namespace BankAppWinForm.Services.Implementations
             allTransactionList.Add(deposit);
             _transactionRepository.WriteAllTransactions(allTransactionList);
 
-            return "Transaction Successfull";
+            return "Transaction Successful";
         }
 
         public string MakeWithdrawal(BankAccount bankAccount, decimal amount, DateTime date, string note)
@@ -41,19 +41,27 @@ namespace BankAppWinForm.Services.Implementations
                 return "Insufficient Fund";
             }
 
-            var deposit = new CustomerTransaction(bankAccount.Id, -amount, date, note);
-            bankAccount.allCustomerTransactions.Add(deposit);
+            var withdrawal = new CustomerTransaction(bankAccount.Id, -amount, date, note);
+            bankAccount.allCustomerTransactions.Add(withdrawal);
             allTransactionList = _transactionRepository.ReadAllTransactions();
-            allTransactionList.Add(deposit);
+            allTransactionList.Add(withdrawal);
             _transactionRepository.WriteAllTransactions(allTransactionList);
 
             return "Successful withdrawal";
         }
 
-        public string Transfer(BankAccount bankAccount, decimal amount, BankAccount account, string note)
+        public string Transfer(BankAccount from, decimal amount, BankAccount to, string note)
         {
-            MakeWithdrawal(bankAccount, amount, DateTime.Now, note);
-            MakeDeposit(account, amount, DateTime.Now, note);
+            
+            if (MakeWithdrawal(from, amount, DateTime.Now, note) == "Successful withdrawal")
+            {
+                MakeDeposit(to, amount, DateTime.Now, note);
+            }
+            else
+            {
+                return "Unsuccessful";
+            }
+           
 
             return "Successful";
         }

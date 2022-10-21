@@ -398,7 +398,8 @@ namespace BankAppWinForms
 
         private void TransferBack_Click(object sender, EventArgs e)
         {
-           
+            Menu.Show();
+            Transfer.Hide();
         }
 
         private void MakeWithdrawal_Click(object sender, EventArgs e)
@@ -412,17 +413,21 @@ namespace BankAppWinForms
                     if (int.TryParse(WithdrawalAmount.Text, out int inpAmt))
                     {
                         _transactionService.MakeWithdrawal(x, inpAmt, DateTime.Now, WithdrawalDescription.Text);
+                        Menu.Show();
+                        Withdrawal.Hide();
+                        break;
                     }
                     else
                     {
                         WithdrawalMessage.Text = "Wrong Input";
+                        break;
                     }
                 }
                 else
                 {
                     WithdrawalMessage.Text = "Account Not Found";
                 }
-                       
+
 
             }
         }
@@ -441,15 +446,18 @@ namespace BankAppWinForms
 
         private void MakeDeposit_Click(object sender, EventArgs e)
         {
-            BankAccount x = new BankAccount();
+            BankAccount x = null;
             foreach (var account in _allBankAccount)
             {
-                if (account.Number == WithdrawalAccount.Text)
+                if (account.Number == DepositAccount.Text)
                 {
                     x = account;
-                    if (int.TryParse(WithdrawalAmount.Text, out int inpAmt))
+                    if (int.TryParse(DepositAmount.Text, out int inpAmt))
                     {
-                        _transactionService.MakeDeposit(x, inpAmt, DateTime.Now, WithdrawalDescription.Text);
+                        _transactionService.MakeDeposit(x, inpAmt, DateTime.Now, DepositDescription.Text);
+                        Menu.Show();
+                        Deposit.Hide();
+                        break;
                     }
                     else
                     {
@@ -464,5 +472,59 @@ namespace BankAppWinForms
 
             }
         }
+
+        private void MakeTransfer_Click(object sender, EventArgs e)
+        {
+            BankAccount x = null;
+            BankAccount y = null;
+
+            foreach (var account in _allBankAccount)
+            {
+
+                if (account.Number == TransferFrom.Text)
+                {
+                    x = account;
+                    break;
+                }
+
+            }
+
+            foreach (var account in _allBankAccount)
+            {
+                if (account.Number == TransferTo.Text)
+                {
+                    y = account;
+                    break;
+                }
+
+            }
+
+
+            if(x != null && y != null)
+            {
+                if (int.TryParse(TransferAmount.Text, out int kAmt))
+                {
+                    _transactionService.Transfer(x, kAmt, y, WithdrawalDescription.Text);
+                    Menu.Show();
+                    Transfer.Hide();
+                }
+                else
+                {
+                    TransferMessage.Text = "Wrong Input Amount";
+                }
+            }
+            else
+            {
+                TransferMessage.Text = "Check your Account no";
+            }           
+            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Menu.Hide();
+            Transfer.Show();
+        }
     }
+
 }

@@ -73,12 +73,13 @@ namespace BankAppWinForms
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
             this.Transfer = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TransferMessage = new System.Windows.Forms.TextBox();
+            this.TransferDescription = new System.Windows.Forms.TextBox();
+            this.TransferTo = new System.Windows.Forms.TextBox();
             this.TransferBack = new System.Windows.Forms.Button();
             this.MakeTransfer = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TransferAmount = new System.Windows.Forms.TextBox();
+            this.TransferFrom = new System.Windows.Forms.TextBox();
             this.Withdrawal = new System.Windows.Forms.GroupBox();
             this.WithdrawalMessage = new System.Windows.Forms.TextBox();
             this.WithdrawalDescription = new System.Windows.Forms.TextBox();
@@ -281,7 +282,7 @@ namespace BankAppWinForms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 48);
+            this.label2.Location = new System.Drawing.Point(49, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 15;
@@ -290,7 +291,7 @@ namespace BankAppWinForms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 20);
+            this.label1.Location = new System.Drawing.Point(70, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 20);
             this.label1.TabIndex = 14;
@@ -332,7 +333,7 @@ namespace BankAppWinForms
             this.Menu.ForeColor = System.Drawing.SystemColors.Control;
             this.Menu.Location = new System.Drawing.Point(389, 4);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(199, 317);
+            this.Menu.Size = new System.Drawing.Size(199, 324);
             this.Menu.TabIndex = 11;
             this.Menu.TabStop = false;
             this.Menu.Text = "Menu";
@@ -368,6 +369,7 @@ namespace BankAppWinForms
             this.button6.TabIndex = 11;
             this.button6.Text = "Transfer";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -383,7 +385,7 @@ namespace BankAppWinForms
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button4.Location = new System.Drawing.Point(44, 248);
+            this.button4.Location = new System.Drawing.Point(53, 272);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(84, 32);
             this.button4.TabIndex = 9;
@@ -572,12 +574,13 @@ namespace BankAppWinForms
             // Transfer
             // 
             this.Transfer.BackColor = System.Drawing.Color.DimGray;
-            this.Transfer.Controls.Add(this.textBox4);
-            this.Transfer.Controls.Add(this.textBox3);
+            this.Transfer.Controls.Add(this.TransferMessage);
+            this.Transfer.Controls.Add(this.TransferDescription);
+            this.Transfer.Controls.Add(this.TransferTo);
             this.Transfer.Controls.Add(this.TransferBack);
             this.Transfer.Controls.Add(this.MakeTransfer);
-            this.Transfer.Controls.Add(this.textBox2);
-            this.Transfer.Controls.Add(this.textBox1);
+            this.Transfer.Controls.Add(this.TransferAmount);
+            this.Transfer.Controls.Add(this.TransferFrom);
             this.Transfer.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.Transfer.ForeColor = System.Drawing.SystemColors.Control;
             this.Transfer.Location = new System.Drawing.Point(600, 259);
@@ -587,23 +590,34 @@ namespace BankAppWinForms
             this.Transfer.TabStop = false;
             this.Transfer.Text = "Transfer";
             // 
-            // textBox4
+            // TransferMessage
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(186, 81);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PlaceholderText = "To";
-            this.textBox4.Size = new System.Drawing.Size(201, 27);
-            this.textBox4.TabIndex = 25;
+            this.TransferMessage.BackColor = System.Drawing.Color.Gray;
+            this.TransferMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TransferMessage.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TransferMessage.Location = new System.Drawing.Point(6, 123);
+            this.TransferMessage.Name = "TransferMessage";
+            this.TransferMessage.Size = new System.Drawing.Size(385, 20);
+            this.TransferMessage.TabIndex = 26;
+            this.TransferMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // TransferDescription
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(185, 22);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "To";
-            this.textBox3.Size = new System.Drawing.Size(201, 27);
-            this.textBox3.TabIndex = 24;
+            this.TransferDescription.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TransferDescription.Location = new System.Drawing.Point(186, 81);
+            this.TransferDescription.Name = "TransferDescription";
+            this.TransferDescription.PlaceholderText = "Description";
+            this.TransferDescription.Size = new System.Drawing.Size(201, 27);
+            this.TransferDescription.TabIndex = 25;
+            // 
+            // TransferTo
+            // 
+            this.TransferTo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TransferTo.Location = new System.Drawing.Point(185, 22);
+            this.TransferTo.Name = "TransferTo";
+            this.TransferTo.PlaceholderText = "To";
+            this.TransferTo.Size = new System.Drawing.Size(201, 27);
+            this.TransferTo.TabIndex = 24;
             // 
             // TransferBack
             // 
@@ -625,24 +639,25 @@ namespace BankAppWinForms
             this.MakeTransfer.TabIndex = 22;
             this.MakeTransfer.Text = "Transfer";
             this.MakeTransfer.UseVisualStyleBackColor = false;
+            this.MakeTransfer.Click += new System.EventHandler(this.MakeTransfer_Click);
             // 
-            // textBox2
+            // TransferAmount
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(0, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "To";
-            this.textBox2.Size = new System.Drawing.Size(177, 27);
-            this.textBox2.TabIndex = 21;
+            this.TransferAmount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TransferAmount.Location = new System.Drawing.Point(0, 81);
+            this.TransferAmount.Name = "TransferAmount";
+            this.TransferAmount.PlaceholderText = "Amount";
+            this.TransferAmount.Size = new System.Drawing.Size(177, 27);
+            this.TransferAmount.TabIndex = 21;
             // 
-            // textBox1
+            // TransferFrom
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(1, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "From ";
-            this.textBox1.Size = new System.Drawing.Size(177, 27);
-            this.textBox1.TabIndex = 20;
+            this.TransferFrom.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TransferFrom.Location = new System.Drawing.Point(1, 22);
+            this.TransferFrom.Name = "TransferFrom";
+            this.TransferFrom.PlaceholderText = "From ";
+            this.TransferFrom.Size = new System.Drawing.Size(177, 27);
+            this.TransferFrom.TabIndex = 20;
             // 
             // Withdrawal
             // 
@@ -668,9 +683,9 @@ namespace BankAppWinForms
             this.WithdrawalMessage.BackColor = System.Drawing.Color.Gray;
             this.WithdrawalMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.WithdrawalMessage.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.WithdrawalMessage.Location = new System.Drawing.Point(6, 146);
+            this.WithdrawalMessage.Location = new System.Drawing.Point(0, 146);
             this.WithdrawalMessage.Name = "WithdrawalMessage";
-            this.WithdrawalMessage.Size = new System.Drawing.Size(205, 20);
+            this.WithdrawalMessage.Size = new System.Drawing.Size(211, 20);
             this.WithdrawalMessage.TabIndex = 22;
             this.WithdrawalMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -996,8 +1011,8 @@ namespace BankAppWinForms
         private TextBox DepositAmount;
         private Button TransferBack;
         private Button MakeTransfer;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox TransferAmount;
+        private TextBox TransferFrom;
         private Button WithdrawalBack;
         private Button DepositBack;
         private ListView AccountView;
@@ -1008,7 +1023,8 @@ namespace BankAppWinForms
         private TextBox DepositDescription;
         private TextBox WithdrawalMessage;
         private TextBox DepositMessage;
-        private TextBox textBox4;
-        private TextBox textBox3;
+        private TextBox TransferDescription;
+        private TextBox TransferTo;
+        private TextBox TransferMessage;
     }
 }

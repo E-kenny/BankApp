@@ -11,12 +11,8 @@ namespace BankAppWinForm.Repositories.Implementations
         string path = @"C:\Users\Decagon\Documents\Transaction.txt";
         public List<CustomerTransaction> ReadAllTransactions()
         {
-            var x = JsonSerializer.Deserialize<List<CustomerTransaction>>(File.ReadAllText(path));
-            foreach (var a in x)
-            {
-                Console.WriteLine(a.Amount);
-            }
-
+            List<CustomerTransaction> x = JsonSerializer.Deserialize<List<CustomerTransaction>>(File.ReadAllText(path));
+            
             return x;
 
         }
