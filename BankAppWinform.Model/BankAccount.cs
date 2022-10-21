@@ -15,16 +15,7 @@ namespace BankAppWinForm.Models
         public List<CustomerTransaction> allCustomerTransactions = new List<CustomerTransaction>();
         public decimal Balance
         {
-            get
-            {
-                decimal balance = 0;
-                foreach (var item in allCustomerTransactions)
-                {
-                    balance += item.Amount;
-                }
-                return balance;
-            }
-
+            get ;
         }
 
         public decimal _minimumBalance;
@@ -33,6 +24,7 @@ namespace BankAppWinForm.Models
         {
 
         }
+
         public BankAccount(string id, string name, decimal initialBalance) : this(id, name, initialBalance, 0) { }
         public BankAccount(string id, string name, decimal initialBalance, decimal minimumBalance)
         {
@@ -43,35 +35,6 @@ namespace BankAppWinForm.Models
             Number = accountNumberSeed.ToString();
             accountNumberSeed++;
 
-           // this is where deposit go to
-            //if (initialBalance > 0)
-            //{
-            //    MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
-            //}
-
-        }
-
-       
-
-        
-        public string GetAccountStatement()
-        {
-            var report = new System.Text.StringBuilder();
-
-            decimal balance = 0;
-            report.AppendLine($"ACCOUNT STATEMENT ON ACCOUNT NO {Number}");
-            report.AppendLine($"|---------------|------------------------|---------------|---------------|");
-            report.AppendLine($"|{"Date",-15}| {"Description",-23}| {"Amount",-15}| {"Balance",-15}|");
-            report.AppendLine($"|---------------|------------------------|---------------|---------------|");
-            foreach (var item in allCustomerTransactions)
-            {
-                balance += item.Amount;
-                report.AppendLine($"|{item.Date.ToShortDateString(),-15}| {item.Descriptions,-25}| {item.Amount,-15}| {balance,-15}|");
-            }
-
-            report.AppendLine($"|---------------|------------------------|---------------|---------------|");
-
-            return report.ToString();
         }
 
     }

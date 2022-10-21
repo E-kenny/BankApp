@@ -9,6 +9,8 @@ using BankAppWinForm.Services;
 using BankAppWinForm.Repositories;
 using System.Net.Security;
 using System.Windows.Forms;
+using System.Security.Principal;
+using System.Transactions;
 
 namespace BankAppWinForms
 {
@@ -20,14 +22,16 @@ namespace BankAppWinForms
         public Response _response;
         public Customer _customer;
         public List<BankAccount> _allBankAccount;
+        public List<CustomerTransaction> _allCustomerTransactions;
 
-        public BankAppForm(IBankAccountService bankAccountService, ICustomerService customerService, ITransactionService transactionService, IBankAccountRepository bankAccountRepository)
+        public BankAppForm(IBankAccountService bankAccountService, ICustomerService customerService, ITransactionService transactionService, IBankAccountRepository bankAccountRepository, ITransactionRepository transactionRepository)
         {
             InitializeComponent();
             _customerService = customerService;
             _transactionService = transactionService;
             _bankAccountService = bankAccountService;
             _allBankAccount = bankAccountRepository.ReadAllAccounts();
+            _allCustomerTransactions = transactionRepository.ReadAllTransactions();
 
             //layers
             HomePage.Show();
@@ -371,12 +375,21 @@ namespace BankAppWinForms
 
             foreach (var account in _allBankAccount)
             {
+
                 if (account.CustomerId == _customer.Id)
                 {
                     ListViewItem item = new ListViewItem(account.Owner);
                     item.SubItems.Add(account.Type);
                     item.SubItems.Add(account.Number);
-                    item.SubItems.Add(Convert.ToString(account.Balance));
+                    decimal balance = 0;
+                    foreach(var transaction in _allCustomerTransactions)
+                    {
+                        if(account.Id == transaction.AccountId)
+                            balance+= transaction.Amount;
+                    }
+
+
+                    item.SubItems.Add(Convert.ToString(balance));
                     AccountView.Items.Add(item);
                 }
 
@@ -524,6 +537,56 @@ namespace BankAppWinForms
         {
             Menu.Hide();
             Transfer.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            HomePage.Hide();
+            RegistrationPage.Hide();
+            Menu.Hide();
+            LogIn.Hide();
+            OpenAccount.Hide();
+            Withdrawal.Hide();
+            Transfer.Hide();
+            Deposit.Hide();
+            //listview
+            ListViewBack.Show();
+            AccountView.Show();
+            AccountView.View = View.Details;
+
+            // Now create the columns
+            // AccountView.Columns.Add("Account Number", 100);
+            AccountView.Columns.Add("Date", 100);
+            AccountView.Columns.Add("Description", 100);
+            AccountView.Columns.Add("Amount", 100);
+            AccountView.Columns.Add("Balance", 100);
+
+            
+
+            foreach (var account in _allBankAccount)
+            {                
+
+                foreach (var transaction in _allCustomerTransactions  )
+                {
+                    if (transaction.AccountId == account.Id)
+                    {
+                        ListViewItem item = new ListViewItem(account.Owner);
+                        item.SubItems.Add(account.Type);
+                        item.SubItems.Add(account.Number);
+
+
+
+
+                        decimal balance = 0;
+                        if (account.Id == transaction.AccountId)
+                            balance += transaction.Amount;
+
+                        item.SubItems.Add(Convert.ToString(balance));
+                        AccountView.Items.Add(item);
+                    }
+                }
+
+            }
         }
     }
 
