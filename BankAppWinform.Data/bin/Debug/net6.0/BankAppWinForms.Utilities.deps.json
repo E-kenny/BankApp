@@ -1,0 +1,33 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "BankAppWinForms.Utilities/1.0.0": {
+        "runtime": {
+          "BankAppWinForms.Utilities.dll": {}
+        }
+      },
+      "BankAppWinForm .Models/1.0.0": {
+        "runtime": {
+          "BankAppWinForm .Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BankAppWinForms.Utilities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BankAppWinForm .Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

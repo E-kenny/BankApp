@@ -1,0 +1,30 @@
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.csproj.AssemblyReference.cache
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.AssemblyInfoInputs.cache
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.AssemblyInfo.cs
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Decagon\source\repos\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinForms.Utilities.deps.json
+C:\Users\Decagon\source\repos\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinForms.Utilities.dll
+C:\Users\Decagon\source\repos\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinForms.Utilities.pdb
+C:\Users\Decagon\source\repos\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinForms.Models.dll
+C:\Users\Decagon\source\repos\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinForms.Models.pdb
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.csproj.CopyComplete
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.dll
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\refint\BankAppWinForms.Utilities.dll
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.pdb
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\ref\BankAppWinForms.Utilities.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinForms.Utilities.deps.json
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinForms.Utilities.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinForms.Utilities.pdb
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.csproj.AssemblyReference.cache
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.AssemblyInfoInputs.cache
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.AssemblyInfo.cs
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.csproj.CopyComplete
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\obj\Debug\net6.0\refint\BankAppWinForms.Utilities.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinForms.Utilities.pdb
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\obj\Debug\net6.0\ref\BankAppWinForms.Utilities.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinForm .Models.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinForm .Models.pdb

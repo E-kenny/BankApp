@@ -1,0 +1,12 @@
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\bin\Debug\net6.0\BankAppWinForm .Models.deps.json
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\bin\Debug\net6.0\BankAppWinForm .Models.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\bin\Debug\net6.0\BankAppWinForm .Models.pdb
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\obj\Debug\net6.0\BankAppWinForm .Models.csproj.AssemblyReference.cache
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\obj\Debug\net6.0\BankAppWinForm .Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\obj\Debug\net6.0\BankAppWinForm .Models.AssemblyInfoInputs.cache
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\obj\Debug\net6.0\BankAppWinForm .Models.AssemblyInfo.cs
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\obj\Debug\net6.0\BankAppWinForm .Models.csproj.CoreCompileInputs.cache
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\obj\Debug\net6.0\BankAppWinForm .Models.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\obj\Debug\net6.0\refint\BankAppWinForm .Models.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\obj\Debug\net6.0\BankAppWinForm .Models.pdb
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinform.Model\obj\Debug\net6.0\ref\BankAppWinForm .Models.dll

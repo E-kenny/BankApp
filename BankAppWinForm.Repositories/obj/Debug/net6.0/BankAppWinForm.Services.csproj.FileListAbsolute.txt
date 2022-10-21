@@ -1,0 +1,17 @@
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\bin\Debug\net6.0\BankAppWinForm.Services.deps.json
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\bin\Debug\net6.0\BankAppWinForm.Services.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\bin\Debug\net6.0\BankAppWinForm.Services.pdb
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\bin\Debug\net6.0\BankAppWinForm .Models.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\bin\Debug\net6.0\BankAppWinForm.Repositories.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\bin\Debug\net6.0\BankAppWinForm .Models.pdb
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\bin\Debug\net6.0\BankAppWinForm.Repositories.pdb
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\obj\Debug\net6.0\BankAppWinForm.Services.csproj.AssemblyReference.cache
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\obj\Debug\net6.0\BankAppWinForm.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\obj\Debug\net6.0\BankAppWinForm.Services.AssemblyInfoInputs.cache
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\obj\Debug\net6.0\BankAppWinForm.Services.AssemblyInfo.cs
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\obj\Debug\net6.0\BankAppWinForm.Services.csproj.CoreCompileInputs.cache
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\obj\Debug\net6.0\BankAppWinForm.Services.csproj.CopyComplete
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\obj\Debug\net6.0\BankAppWinForm.Services.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\obj\Debug\net6.0\refint\BankAppWinForm.Services.dll
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\obj\Debug\net6.0\BankAppWinForm.Services.pdb
+C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm.Repositories\obj\Debug\net6.0\ref\BankAppWinForm.Services.dll

@@ -1,0 +1,12 @@
+C:\Users\Decagon\source\repos\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinform.Data.deps.json
+C:\Users\Decagon\source\repos\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinform.Data.dll
+C:\Users\Decagon\source\repos\BankAppWinform.Data\bin\Debug\net6.0\BankAppWinform.Data.pdb
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinform.Data.csproj.AssemblyReference.cache
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinform.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinform.Data.AssemblyInfoInputs.cache
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinform.Data.AssemblyInfo.cs
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinform.Data.csproj.CoreCompileInputs.cache
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinform.Data.dll
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\refint\BankAppWinform.Data.dll
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\BankAppWinform.Data.pdb
+C:\Users\Decagon\source\repos\BankAppWinform.Data\obj\Debug\net6.0\ref\BankAppWinform.Data.dll
