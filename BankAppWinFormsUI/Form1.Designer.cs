@@ -590,6 +590,7 @@ namespace BankAppWinForms
             this.Transfer.TabIndex = 15;
             this.Transfer.TabStop = false;
             this.Transfer.Text = "Transfer";
+            this.Transfer.Enter += new System.EventHandler(this.Transfer_Enter);
             // 
             // TransferMessage
             // 

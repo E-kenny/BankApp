@@ -14,7 +14,7 @@ namespace BankAppWinForm.Services.Implementations
         }
 
 
-        public string MakeDeposit(BankAccount bankAccount, decimal amount, DateTime date, string note)
+        public List<CustomerTransaction> MakeDeposit(BankAccount bankAccount, decimal amount, DateTime date, string note)
         {
             if (amount <= 0)
             {
@@ -22,24 +22,24 @@ namespace BankAppWinForm.Services.Implementations
             }
             var deposit = new CustomerTransaction(bankAccount.Id, amount, date, note);
             bankAccount.allCustomerTransactions.Add(deposit);
-            allTransactionList= _transactionRepository.ReadAllTransactions();
+            allTransactionList = _transactionRepository.ReadAllTransactions();
             allTransactionList.Add(deposit);
             _transactionRepository.WriteAllTransactions(allTransactionList);
 
-            return "Transaction Successful";
+            return allTransactionList;
         }
 
-        public string MakeWithdrawal(BankAccount bankAccount, decimal amount, DateTime date, string note)
+        public List<CustomerTransaction> MakeWithdrawal(BankAccount bankAccount, decimal amount, DateTime date, string note)
         {
             if (amount <= 0)
             {
-                return "Insufficient Fund";
+                return null; ;
             }
 
-            if (bankAccount.Balance - amount < bankAccount._minimumBalance)
-            {
-                return "Insufficient Fund";
-            }
+            //if ( amount < bankAccount._minimumBalance)
+            //{
+            //    return "Insufficient Fund";
+            //}
 
             var withdrawal = new CustomerTransaction(bankAccount.Id, -amount, date, note);
             bankAccount.allCustomerTransactions.Add(withdrawal);
@@ -47,23 +47,23 @@ namespace BankAppWinForm.Services.Implementations
             allTransactionList.Add(withdrawal);
             _transactionRepository.WriteAllTransactions(allTransactionList);
 
-            return "Successful withdrawal";
+            return allTransactionList;
         }
 
-        public string Transfer(BankAccount from, decimal amount, BankAccount to, string note)
+        public List<CustomerTransaction> Transfer(BankAccount from, decimal amount, BankAccount to, string note)
         {
             
-            if (MakeWithdrawal(from, amount, DateTime.Now, note) == "Successful withdrawal")
+            if (MakeWithdrawal(from, amount, DateTime.Now, note) != null)
             {
                 MakeDeposit(to, amount, DateTime.Now, note);
             }
             else
             {
-                return "Unsuccessful";
+                return null;
             }
            
 
-            return "Successful";
+            return allTransactionList;
         }
     }
 }

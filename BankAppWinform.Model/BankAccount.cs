@@ -13,10 +13,6 @@ namespace BankAppWinForm.Models
         public virtual string Type { get; set; }
 
         public List<CustomerTransaction> allCustomerTransactions = new List<CustomerTransaction>();
-        public decimal Balance
-        {
-            get ;
-        }
 
         public decimal _minimumBalance;
 

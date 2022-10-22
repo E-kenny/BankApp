@@ -434,7 +434,7 @@ namespace BankAppWinForms
                     x = account;
                     if (int.TryParse(WithdrawalAmount.Text, out int inpAmt))
                     {
-                        _transactionService.MakeWithdrawal(x, inpAmt, DateTime.Now, WithdrawalDescription.Text);
+                        _allCustomerTransactions =  _transactionService.MakeWithdrawal(x, inpAmt, DateTime.Now, WithdrawalDescription.Text);
                         Menu.Show();
                         Withdrawal.Hide();
                         break;
@@ -483,7 +483,7 @@ namespace BankAppWinForms
                     x = account;
                     if (int.TryParse(DepositAmount.Text, out int inpAmt))
                     {
-                        _transactionService.MakeDeposit(x, inpAmt, DateTime.Now, DepositDescription.Text);
+                       _allCustomerTransactions =  _transactionService.MakeDeposit(x, inpAmt, DateTime.Now, DepositDescription.Text);
                         Menu.Show();
                         Deposit.Hide();
                         break;
@@ -533,7 +533,7 @@ namespace BankAppWinForms
             {
                 if (int.TryParse(TransferAmount.Text, out int kAmt))
                 {
-                    _transactionService.Transfer(x, kAmt, y, WithdrawalDescription.Text);
+                    _allCustomerTransactions = _transactionService.Transfer(x, kAmt, y, WithdrawalDescription.Text);
                     Menu.Show();
                     Transfer.Hide();
                 }
@@ -601,6 +601,11 @@ namespace BankAppWinForms
                 }
 
             }
+        }
+
+        private void Transfer_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 
