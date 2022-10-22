@@ -9,7 +9,7 @@ namespace BankAppWinForm.Repositories.Implementations
 {
     public class CustomerRepo:ICustomerRepo
     {
-        string path = @"C:\Users\Decagon\Documents\Customer.txt";
+        string path = @"C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm\BankAppWinForm.Services\Db\Customer.json";
 
         public List<Customer> ReadAllCustomers()
         {

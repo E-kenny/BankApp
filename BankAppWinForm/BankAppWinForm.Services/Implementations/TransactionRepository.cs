@@ -8,7 +8,7 @@ namespace BankAppWinForm.Repositories.Implementations
     public class TransactionRepository : ITransactionRepository
     {
       
-        string path = @"C:\Users\Decagon\Documents\Transaction.txt";
+        string path = @"C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm\BankAppWinForm.Services\Db\Transaction.json";
         public List<CustomerTransaction> ReadAllTransactions()
         {
             List<CustomerTransaction> x = JsonSerializer.Deserialize<List<CustomerTransaction>>(File.ReadAllText(path));

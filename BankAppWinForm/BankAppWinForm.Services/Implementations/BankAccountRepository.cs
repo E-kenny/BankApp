@@ -6,7 +6,7 @@ namespace BankAppWinForm.Repositories.Implementations
 {
     public class BankAccountRepository : IBankAccountRepository
     {
-        string path = @"C:\Users\Decagon\Documents\Account.txt";
+        string path = @"C:\Users\Decagon\source\repos\AllWinForm\BankAppWinForm\BankAppWinForm.Services\Db\Account.json";
 
         public List<BankAccount> ReadAllAccounts()
         {
