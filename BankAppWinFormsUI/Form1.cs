@@ -267,7 +267,7 @@ namespace BankAppWinForms
                 BankAccount _bankAccount = _bankAccountService.OpenAccount(_customer, 2, balance);
                 if (_bankAccount != null)
                 {
-                    _transactionService.MakeDeposit(_bankAccount, balance, DateTime.Now, "Initial Balance");
+                    _allCustomerTransactions =  _transactionService.MakeDeposit(_bankAccount, balance, DateTime.Now, "Initial Balance");
                     OpenAccountMessage.Text = "";
                     _allBankAccount.Add(_bankAccount);
                     Menu.Show();
@@ -304,7 +304,7 @@ namespace BankAppWinForms
                 BankAccount _bankAccount = _bankAccountService.OpenAccount(_customer, 1, balance);
                 if (_bankAccount != null)
                 {
-                    _transactionService.MakeDeposit(_bankAccount, balance, DateTime.Now, "Initial Balance");
+                    _allCustomerTransactions =  _transactionService.MakeDeposit(_bankAccount, balance, DateTime.Now, "Initial Balance");
                     OpenAccountMessage.Text = "";
                     _allBankAccount.Add(_bankAccount);
                     Menu.Show();
@@ -373,8 +373,7 @@ namespace BankAppWinForms
             AccountView.Columns.Add("Number", 100);
             AccountView.Columns.Add("Balance", 100);
 
-
-
+          
             foreach (var account in _allBankAccount)
             {
                 decimal balance = 0;
@@ -473,6 +472,7 @@ namespace BankAppWinForms
             DepositDescription.Text = "";
         }
 
+        
         private void MakeDeposit_Click(object sender, EventArgs e)
         {
             BankAccount x = null;
