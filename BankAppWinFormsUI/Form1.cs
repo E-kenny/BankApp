@@ -267,12 +267,13 @@ namespace BankAppWinForms
                 BankAccount _bankAccount = _bankAccountService.OpenAccount(_customer, 2, balance);
                 if (_bankAccount != null)
                 {
+                    _transactionService.MakeDeposit(_bankAccount, balance, DateTime.Now, "Initial Balance");
                     OpenAccountMessage.Text = "";
                     _allBankAccount.Add(_bankAccount);
                     Menu.Show();
                     OpenAccount.Hide();
                     InitialBalance.Text = "";
-                }
+                }         
 
 
             }
@@ -303,6 +304,7 @@ namespace BankAppWinForms
                 BankAccount _bankAccount = _bankAccountService.OpenAccount(_customer, 1, balance);
                 if (_bankAccount != null)
                 {
+                    _transactionService.MakeDeposit(_bankAccount, balance, DateTime.Now, "Initial Balance");
                     OpenAccountMessage.Text = "";
                     _allBankAccount.Add(_bankAccount);
                     Menu.Show();
@@ -375,16 +377,19 @@ namespace BankAppWinForms
 
             foreach (var account in _allBankAccount)
             {
+                decimal balance = 0;
 
                 if (account.CustomerId == _customer.Id)
                 {
+                   
                     ListViewItem item = new ListViewItem(account.Owner);
                     item.SubItems.Add(account.Type);
                     item.SubItems.Add(account.Number);
-                    decimal balance = 0;
+                    
                     foreach(var transaction in _allCustomerTransactions)
                     {
-                        if(account.Id == transaction.AccountId)
+                      
+                        if (account.Id == transaction.AccountId)
                             balance+= transaction.Amount;
                     }
 

@@ -6,5 +6,13 @@
     "Owner": "Obiasogu Ekene",
     "Type": "Current",
     "Balance": 0
+  },
+  {
+    "Id": "febcdb27-4755-4cbb-9396-393977604029",
+    "CustomerId": "ebdeb974-8d87-4bb4-9405-08a36efddc15",
+    "Number": "987654321",
+    "Owner": "Obiasogu Ekene",
+    "Type": "Savings",
+    "Balance": 0
   }
 ]
