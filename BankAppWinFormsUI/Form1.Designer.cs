@@ -270,7 +270,7 @@ namespace BankAppWinForms
             this.LoginMessage.BackColor = System.Drawing.Color.Gray;
             this.LoginMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LoginMessage.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LoginMessage.Location = new System.Drawing.Point(1, 116);
+            this.LoginMessage.Location = new System.Drawing.Point(2, 115);
             this.LoginMessage.Name = "LoginMessage";
             this.LoginMessage.Size = new System.Drawing.Size(163, 15);
             this.LoginMessage.TabIndex = 16;

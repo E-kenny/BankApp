@@ -1,23 +1,16 @@
 [
   {
-    "Id": "2ed3d9b0-5a69-498b-a66e-a9d87ac3bb59",
-    "CustomerId": "ebdeb974-8d87-4bb4-9405-08a36efddc15",
-    "Number": "987654321",
-    "Owner": "Obiasogu Ekene",
+    "Id": "b25bfb64-d6bb-444c-b461-b682bdbafc09",
+    "CustomerId": "0ecb101e-0ab6-403b-9151-7f8cbd646cca",
+    "Number": "15037786",
+    "Owner": "Obi Ekene",
     "Type": "Current"
   },
   {
-    "Id": "60f2d170-59c6-4c58-a26a-ec42686aa06d",
-    "CustomerId": "ebdeb974-8d87-4bb4-9405-08a36efddc15",
-    "Number": "987654322",
-    "Owner": "Obiasogu Ekene",
-    "Type": "Savings"
-  },
-  {
-    "Id": "25389510-cadb-405e-89af-cecaecda5fad",
-    "CustomerId": "ebdeb974-8d87-4bb4-9405-08a36efddc15",
-    "Number": "987654321",
-    "Owner": "Obiasogu Ekene",
+    "Id": "1b147717-fcc2-4296-856a-7433198aea38",
+    "CustomerId": "373cb6ce-29c7-43ee-bf72-b2dde3c1cebe",
+    "Number": "646510511",
+    "Owner": "Obi Mathew",
     "Type": "Current"
   }
 ]

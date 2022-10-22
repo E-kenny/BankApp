@@ -13,6 +13,7 @@ using System.Security.Principal;
 using System.Transactions;
 using BankAppWinForms.Utilities;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Common;
 
 namespace BankAppWinForms
 {
@@ -91,10 +92,10 @@ namespace BankAppWinForms
 
                 if (_response.status == "Successful")
                 {
-                    HomePage.Show();
+                    HomePage.Hide();
                     RegistrationPage.Hide();
                     Menu.Hide();
-                    LogIn.Hide();
+                    LogIn.Show();
 
                     registerFirstName.Text = "";
                     registerLastName.Text = "";
@@ -306,7 +307,7 @@ namespace BankAppWinForms
                 BankAccount _bankAccount = _bankAccountService.OpenAccount(_customer, 2, balance);
                 if (_bankAccount != null)
                 {
-                    _allCustomerTransactions =  _transactionService.MakeDeposit(_bankAccount, balance, DateTime.Now, "Initial Balance");
+                    _allCustomerTransactions =  _transactionService.MakeDeposit(_bankAccount.Id, balance, DateTime.Now, "Initial Balance");
                     OpenAccountMessage.Text = "";
                     _allBankAccount.Add(_bankAccount);
                     Menu.Show();
@@ -333,6 +334,7 @@ namespace BankAppWinForms
         {
             Menu.Show();
             OpenAccount.Hide();
+            OpenAccountMessage.Text = "";
         }
 
         private void OpenSavings_Click(object sender, EventArgs e)
@@ -343,7 +345,7 @@ namespace BankAppWinForms
                 BankAccount _bankAccount = _bankAccountService.OpenAccount(_customer, 1, balance);
                 if (_bankAccount != null)
                 {
-                    _allCustomerTransactions =  _transactionService.MakeDeposit(_bankAccount, balance, DateTime.Now, "Initial Balance");
+                    _allCustomerTransactions =  _transactionService.MakeDeposit(_bankAccount.Id, balance, DateTime.Now, "Initial Balance");
                     OpenAccountMessage.Text = "";
                     _allBankAccount.Add(_bankAccount);
                     Menu.Show();
@@ -464,17 +466,21 @@ namespace BankAppWinForms
 
         private void MakeWithdrawal_Click(object sender, EventArgs e)
         {
-            BankAccount x = new BankAccount();
+          
             foreach (var account in _allBankAccount)
             {
                 if (account.Number == WithdrawalAccount.Text)
                 {
-                    x = account;
+                  
                     if (int.TryParse(WithdrawalAmount.Text, out int inpAmt))
                     {
-                        _allCustomerTransactions =  _transactionService.MakeWithdrawal(x, inpAmt, DateTime.Now, WithdrawalDescription.Text);
+                        _allCustomerTransactions =  _transactionService.MakeWithdrawal(account.Id, inpAmt, DateTime.Now, WithdrawalDescription.Text);
                         Menu.Show();
                         Withdrawal.Hide();
+                        WithdrawalAccount.Text = "";
+                        WithdrawalAmount.Text = "";
+                        WithdrawalDescription.Text = "";
+                        WithdrawalMessage.Text = "";
                         break;
                     }
                     else
@@ -514,17 +520,21 @@ namespace BankAppWinForms
         
         private void MakeDeposit_Click(object sender, EventArgs e)
         {
-            BankAccount x = null;
+          
             foreach (var account in _allBankAccount)
             {
                 if (account.Number == DepositAccount.Text)
                 {
-                    x = account;
+                   
                     if (int.TryParse(DepositAmount.Text, out int inpAmt))
                     {
-                       _allCustomerTransactions =  _transactionService.MakeDeposit(x, inpAmt, DateTime.Now, DepositDescription.Text);
+                       _allCustomerTransactions =  _transactionService.MakeDeposit(account.Id, inpAmt, DateTime.Now, DepositDescription.Text);
                         Menu.Show();
                         Deposit.Hide();
+                        DepositMessage.Text = "";
+                        DepositAccount.Text = "";
+                        DepositAmount.Text = "";
+                        DepositDescription.Text = "";
                         break;
                     }
                     else
@@ -543,25 +553,25 @@ namespace BankAppWinForms
 
         private void MakeTransfer_Click(object sender, EventArgs e)
         {
-            BankAccount x = null;
-            BankAccount y = null;
+            string x = "";
+            string y = "";
 
-            foreach (var account in _allBankAccount)
+            foreach (var account1 in _allBankAccount)
             {
 
-                if (account.Number == TransferFrom.Text)
+                if (account1.Number == TransferFrom.Text)
                 {
-                    x = account;
+                    x = account1.Id;
                     break;
                 }
 
             }
 
-            foreach (var account in _allBankAccount)
+            foreach (var account2 in _allBankAccount)
             {
-                if (account.Number == TransferTo.Text)
+                if (account2.Number == TransferTo.Text)
                 {
-                    y = account;
+                    y = account2.Id;
                     break;
                 }
 
@@ -613,30 +623,33 @@ namespace BankAppWinForms
             // AccountView.Columns.Add("Account Number", 100);
             AccountView.Columns.Add("Date", 100);
             AccountView.Columns.Add("Description", 100);
-            AccountView.Columns.Add("Amount", 100);
+            AccountView.Columns.Add("Account", 100);
             AccountView.Columns.Add("Balance", 100);
 
-            
-
             foreach (var account in _allBankAccount)
-            {                
-
-                foreach (var transaction in _allCustomerTransactions  )
-                {
-                    if (transaction.AccountId == account.Id)
+            {
+               
+                foreach (var transaction in _allCustomerTransactions)
                     {
-                        ListViewItem item = new ListViewItem(account.Owner);
+
+                     if (account.CustomerId == _customer.Id)
+                       
+                      {
+
+                        if (account.Id == transaction.AccountId)
+                        {
+                            ListViewItem item = new ListViewItem(account.Owner);
                         item.SubItems.Add(account.Type);
                         item.SubItems.Add(account.Number);
 
 
-                        decimal balance = 0;
-                        if (account.Id == transaction.AccountId)
-                            balance += transaction.Amount;
+                            decimal balance = 0;
 
-                        item.SubItems.Add(Convert.ToString(balance));
-                        AccountView.Items.Add(item);
-                    }
+                            balance += transaction.Amount;
+                            item.SubItems.Add(Convert.ToString(balance));
+                            AccountView.Items.Add(item);
+                        }   
+                     }
                 }
 
             }

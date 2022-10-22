@@ -14,14 +14,13 @@ namespace BankAppWinForm.Services.Implementations
         }
 
 
-        public List<CustomerTransaction> MakeDeposit(BankAccount bankAccount, decimal amount, DateTime date, string note)
+        public List<CustomerTransaction> MakeDeposit(string id, decimal amount, DateTime date, string note)
         {
             if (amount <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of deposit must be positive");
             }
-            var deposit = new CustomerTransaction(bankAccount.Id, amount, date, note);
-            bankAccount.allCustomerTransactions.Add(deposit);
+            var deposit = new CustomerTransaction(id, amount, date, note);
             allTransactionList = _transactionRepository.ReadAllTransactions();
             allTransactionList.Add(deposit);
             _transactionRepository.WriteAllTransactions(allTransactionList);
@@ -29,7 +28,7 @@ namespace BankAppWinForm.Services.Implementations
             return allTransactionList;
         }
 
-        public List<CustomerTransaction> MakeWithdrawal(BankAccount bankAccount, decimal amount, DateTime date, string note)
+        public List<CustomerTransaction> MakeWithdrawal(string id, decimal amount, DateTime date, string note)
         {
             if (amount <= 0)
             {
@@ -41,8 +40,7 @@ namespace BankAppWinForm.Services.Implementations
             //    return "Insufficient Fund";
             //}
 
-            var withdrawal = new CustomerTransaction(bankAccount.Id, -amount, date, note);
-            bankAccount.allCustomerTransactions.Add(withdrawal);
+            var withdrawal = new CustomerTransaction(id, -amount, date, note);
             allTransactionList = _transactionRepository.ReadAllTransactions();
             allTransactionList.Add(withdrawal);
             _transactionRepository.WriteAllTransactions(allTransactionList);
@@ -50,12 +48,12 @@ namespace BankAppWinForm.Services.Implementations
             return allTransactionList;
         }
 
-        public List<CustomerTransaction> Transfer(BankAccount from, decimal amount, BankAccount to, string note)
+        public List<CustomerTransaction> Transfer(string id1, decimal amount, string id2, string note)
         {
             
-            if (MakeWithdrawal(from, amount, DateTime.Now, note) != null)
+            if (MakeWithdrawal(id1, amount, DateTime.Now, note) != null)
             {
-                MakeDeposit(to, amount, DateTime.Now, note);
+                MakeDeposit(id2, amount, DateTime.Now, note);
             }
             else
             {

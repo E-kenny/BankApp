@@ -9,8 +9,8 @@ namespace BankAppWinForm.Services.Interfaces
 {
     public interface ITransactionService
     {
-        List<CustomerTransaction> MakeDeposit(BankAccount bankAccount, decimal amount, DateTime date, string note);
-        List<CustomerTransaction> MakeWithdrawal(BankAccount bankAccount, decimal amount, DateTime date, string note);
-        List<CustomerTransaction> Transfer(BankAccount bankAccount, decimal amount, BankAccount account, string note);
+        List<CustomerTransaction> MakeDeposit(string bankAccount, decimal amount, DateTime date, string note);
+        List<CustomerTransaction> MakeWithdrawal(string bankAccount, decimal amount, DateTime date, string note);
+        List<CustomerTransaction> Transfer(string bankAccount, decimal amount, string account, string note);
     }
 }

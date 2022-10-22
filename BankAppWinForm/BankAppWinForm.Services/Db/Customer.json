@@ -1,11 +1,18 @@
 [
- 
   {
-    "Id": "8e4e1f7d-6616-459f-9e78-3f37b40449d0",
+    "Id": "0ecb101e-0ab6-403b-9151-7f8cbd646cca",
     "FirstName": "Ekene",
     "LastName": "Obi",
     "Email": "ek@gmail.com",
     "Password": "E@kenny1234",
     "Name": "Obi Ekene"
+  },
+  {
+    "Id": "373cb6ce-29c7-43ee-bf72-b2dde3c1cebe",
+    "FirstName": "Mathew",
+    "LastName": "Obi",
+    "Email": "ma@gmail.com",
+    "Password": "m@athew1234",
+    "Name": "Obi Mathew"
   }
 ]
