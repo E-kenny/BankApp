@@ -34,12 +34,17 @@ namespace BankAppWinForms
             this.registerFirstName = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.RegistrationPage = new System.Windows.Forms.GroupBox();
+            this.RegisterMessage2 = new System.Windows.Forms.TextBox();
+            this.RegisterMessage1 = new System.Windows.Forms.TextBox();
+            this.RegisterMessage = new System.Windows.Forms.TextBox();
             this.RegisterHome = new System.Windows.Forms.Button();
             this.RegisterPassword = new System.Windows.Forms.TextBox();
             this.RegisterEmail = new System.Windows.Forms.TextBox();
             this.registerLastName = new System.Windows.Forms.TextBox();
             this.LogIn = new System.Windows.Forms.GroupBox();
-            this.message = new System.Windows.Forms.TextBox();
+            this.LoginMessage2 = new System.Windows.Forms.TextBox();
+            this.LoginMessage = new System.Windows.Forms.TextBox();
+            this.LoginMessage1 = new System.Windows.Forms.TextBox();
             this.LoginHome = new System.Windows.Forms.Button();
             this.LogInPassword = new System.Windows.Forms.TextBox();
             this.LogInEmail = new System.Windows.Forms.TextBox();
@@ -128,9 +133,9 @@ namespace BankAppWinForms
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnSubmit.Location = new System.Drawing.Point(11, 188);
+            this.btnSubmit.Location = new System.Drawing.Point(-3, 243);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(60, 32);
+            this.btnSubmit.Size = new System.Drawing.Size(60, 28);
             this.btnSubmit.TabIndex = 7;
             this.btnSubmit.Text = "Register";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -139,6 +144,9 @@ namespace BankAppWinForms
             // RegistrationPage
             // 
             this.RegistrationPage.BackColor = System.Drawing.Color.DimGray;
+            this.RegistrationPage.Controls.Add(this.RegisterMessage2);
+            this.RegistrationPage.Controls.Add(this.RegisterMessage1);
+            this.RegistrationPage.Controls.Add(this.RegisterMessage);
             this.RegistrationPage.Controls.Add(this.RegisterHome);
             this.RegistrationPage.Controls.Add(this.RegisterPassword);
             this.RegistrationPage.Controls.Add(this.RegisterEmail);
@@ -148,18 +156,51 @@ namespace BankAppWinForms
             this.RegistrationPage.ForeColor = System.Drawing.SystemColors.Control;
             this.RegistrationPage.Location = new System.Drawing.Point(1, 4);
             this.RegistrationPage.Name = "RegistrationPage";
-            this.RegistrationPage.Size = new System.Drawing.Size(165, 249);
+            this.RegistrationPage.Size = new System.Drawing.Size(165, 271);
             this.RegistrationPage.TabIndex = 1;
             this.RegistrationPage.TabStop = false;
             this.RegistrationPage.Text = "Register User";
             this.RegistrationPage.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // RegisterMessage2
+            // 
+            this.RegisterMessage2.BackColor = System.Drawing.Color.Gray;
+            this.RegisterMessage2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RegisterMessage2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RegisterMessage2.Location = new System.Drawing.Point(0, 196);
+            this.RegisterMessage2.Name = "RegisterMessage2";
+            this.RegisterMessage2.Size = new System.Drawing.Size(163, 15);
+            this.RegisterMessage2.TabIndex = 18;
+            this.RegisterMessage2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // RegisterMessage1
+            // 
+            this.RegisterMessage1.BackColor = System.Drawing.Color.Gray;
+            this.RegisterMessage1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RegisterMessage1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RegisterMessage1.Location = new System.Drawing.Point(0, 172);
+            this.RegisterMessage1.Name = "RegisterMessage1";
+            this.RegisterMessage1.Size = new System.Drawing.Size(163, 15);
+            this.RegisterMessage1.TabIndex = 17;
+            this.RegisterMessage1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // RegisterMessage
+            // 
+            this.RegisterMessage.BackColor = System.Drawing.Color.Gray;
+            this.RegisterMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RegisterMessage.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RegisterMessage.Location = new System.Drawing.Point(0, 222);
+            this.RegisterMessage.Name = "RegisterMessage";
+            this.RegisterMessage.Size = new System.Drawing.Size(163, 15);
+            this.RegisterMessage.TabIndex = 16;
+            this.RegisterMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // RegisterHome
             // 
             this.RegisterHome.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.RegisterHome.Location = new System.Drawing.Point(88, 188);
+            this.RegisterHome.Location = new System.Drawing.Point(99, 243);
             this.RegisterHome.Name = "RegisterHome";
-            this.RegisterHome.Size = new System.Drawing.Size(60, 32);
+            this.RegisterHome.Size = new System.Drawing.Size(60, 28);
             this.RegisterHome.TabIndex = 11;
             this.RegisterHome.Text = "Home";
             this.RegisterHome.UseVisualStyleBackColor = false;
@@ -198,29 +239,53 @@ namespace BankAppWinForms
             // LogIn
             // 
             this.LogIn.BackColor = System.Drawing.Color.DimGray;
-            this.LogIn.Controls.Add(this.message);
+            this.LogIn.Controls.Add(this.LoginMessage2);
+            this.LogIn.Controls.Add(this.LoginMessage);
+            this.LogIn.Controls.Add(this.LoginMessage1);
             this.LogIn.Controls.Add(this.LoginHome);
             this.LogIn.Controls.Add(this.LogInPassword);
             this.LogIn.Controls.Add(this.LogInEmail);
             this.LogIn.Controls.Add(this.button1);
             this.LogIn.ForeColor = System.Drawing.SystemColors.Control;
-            this.LogIn.Location = new System.Drawing.Point(1, 259);
+            this.LogIn.Location = new System.Drawing.Point(1, 281);
             this.LogIn.Name = "LogIn";
-            this.LogIn.Size = new System.Drawing.Size(165, 221);
+            this.LogIn.Size = new System.Drawing.Size(165, 199);
             this.LogIn.TabIndex = 11;
             this.LogIn.TabStop = false;
             this.LogIn.Text = "Log In User";
             // 
-            // message
+            // LoginMessage2
             // 
-            this.message.BackColor = System.Drawing.Color.Gray;
-            this.message.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.message.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.message.Location = new System.Drawing.Point(0, 114);
-            this.message.Name = "message";
-            this.message.Size = new System.Drawing.Size(163, 20);
-            this.message.TabIndex = 15;
-            this.message.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.LoginMessage2.BackColor = System.Drawing.Color.Gray;
+            this.LoginMessage2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LoginMessage2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LoginMessage2.Location = new System.Drawing.Point(1, 134);
+            this.LoginMessage2.Name = "LoginMessage2";
+            this.LoginMessage2.Size = new System.Drawing.Size(163, 15);
+            this.LoginMessage2.TabIndex = 17;
+            this.LoginMessage2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LoginMessage
+            // 
+            this.LoginMessage.BackColor = System.Drawing.Color.Gray;
+            this.LoginMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LoginMessage.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LoginMessage.Location = new System.Drawing.Point(1, 116);
+            this.LoginMessage.Name = "LoginMessage";
+            this.LoginMessage.Size = new System.Drawing.Size(163, 15);
+            this.LoginMessage.TabIndex = 16;
+            this.LoginMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LoginMessage1
+            // 
+            this.LoginMessage1.BackColor = System.Drawing.Color.Gray;
+            this.LoginMessage1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LoginMessage1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LoginMessage1.Location = new System.Drawing.Point(2, 152);
+            this.LoginMessage1.Name = "LoginMessage1";
+            this.LoginMessage1.Size = new System.Drawing.Size(163, 15);
+            this.LoginMessage1.TabIndex = 15;
+            this.LoginMessage1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LoginHome
             // 
@@ -235,12 +300,12 @@ namespace BankAppWinForms
             // 
             // LogInPassword
             // 
-            this.LogInPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LogInPassword.Location = new System.Drawing.Point(0, 81);
+            this.LogInPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LogInPassword.Location = new System.Drawing.Point(0, 75);
             this.LogInPassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 3);
             this.LogInPassword.Name = "LogInPassword";
             this.LogInPassword.PlaceholderText = "Password";
-            this.LogInPassword.Size = new System.Drawing.Size(163, 27);
+            this.LogInPassword.Size = new System.Drawing.Size(163, 26);
             this.LogInPassword.TabIndex = 10;
             // 
             // LogInEmail
@@ -996,7 +1061,7 @@ namespace BankAppWinForms
         private Label label2;
         private Button RegisterHome;
         private Button LoginHome;
-        private TextBox message;
+        private TextBox LoginMessage1;
         private GroupBox Transfer;
         private GroupBox Withdrawal;
         private GroupBox Deposit;
@@ -1028,5 +1093,10 @@ namespace BankAppWinForms
         private TextBox TransferDescription;
         private TextBox TransferTo;
         private TextBox TransferMessage;
+        private TextBox RegisterMessage;
+        private TextBox RegisterMessage1;
+        private TextBox RegisterMessage2;
+        private TextBox LoginMessage;
+        private TextBox LoginMessage2;
     }
 }

@@ -4,7 +4,7 @@ using BankAppWinForm.Models;
 
 namespace BankAppWinForms.Utilities
 {
-    public class Validator
+    public static class MyValidator
     {
         public static Regex reg = new Regex(@"^[A-Z]\w+$");
         public static Regex pass = new Regex(@"^[@#$%^&!]\w{5,}$");
@@ -13,7 +13,7 @@ namespace BankAppWinForms.Utilities
         public static Regex hasMinimum8Chars = new Regex(@".{8,}");
 
 
-        public bool IsValid(string str)
+        public static bool IsValid(string str)
         {
             if (!reg.IsMatch(str))
             {
@@ -23,7 +23,7 @@ namespace BankAppWinForms.Utilities
             return true;
         }
 
-        public bool IsPassword(string str)
+        public static bool IsPassword(string str)
         {
             var isValidated = hasNumber.IsMatch(str) && hasMinimum8Chars.IsMatch(str);
             if (!isValidated)

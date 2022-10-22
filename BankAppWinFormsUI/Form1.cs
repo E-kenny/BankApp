@@ -11,6 +11,8 @@ using System.Net.Security;
 using System.Windows.Forms;
 using System.Security.Principal;
 using System.Transactions;
+using BankAppWinForms.Utilities;
+using System.ComponentModel.DataAnnotations;
 
 namespace BankAppWinForms
 {
@@ -71,27 +73,44 @@ namespace BankAppWinForms
         //Registration
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string firstName = registerFirstName.Text;
-            string lastName = registerLastName.Text;
-            string email = RegisterEmail.Text;
-            string password = RegisterPassword.Text;
+            bool firstName = MyValidator.IsValid(registerFirstName.Text);
+            bool lastName = MyValidator.IsValid(registerLastName.Text);
 
-            _response = _customerService.Register(firstName, lastName, email, password);
-            _customer = _response.customer;
-            message.Text = _response.message;
+            var emailValidator = new EmailAddressAttribute();
+            bool email =   emailValidator.IsValid(RegisterEmail.Text);
 
-            if (_response.status == "Successful")
+
+            bool password = MyValidator.IsPassword( RegisterPassword.Text);
+
+
+            if (firstName && lastName  && password && email) 
             {
-                HomePage.Show();
-                RegistrationPage.Hide();
-                Menu.Hide();
-                LogIn.Hide();
+                _response = _customerService.Register(registerFirstName.Text, registerLastName.Text, RegisterEmail.Text, RegisterPassword.Text);
+                _customer = _response.customer;
+                LoginMessage.Text = _response.message;
 
-                registerFirstName.Text = "";
-                registerLastName.Text = "";
-                RegisterEmail.Text = "";
-                RegisterPassword.Text = "";
+                if (_response.status == "Successful")
+                {
+                    HomePage.Show();
+                    RegistrationPage.Hide();
+                    Menu.Hide();
+                    LogIn.Hide();
+
+                    registerFirstName.Text = "";
+                    registerLastName.Text = "";
+                    RegisterEmail.Text = "";
+                    RegisterPassword.Text = "";
+                    RegisterMessage1.Text = "";
+                    RegisterMessage.Text = "";
+                    RegisterMessage2.Text = "";
+                }
             }
+            else
+            {
+                RegisterMessage1.Text = "proper email format";
+                RegisterMessage2.Text = "Name must start with cap letter";
+                RegisterMessage.Text = "Password - (spe)char & Alphanumeric";
+            }           
 
         }
 
@@ -226,24 +245,44 @@ namespace BankAppWinForms
         //Login
         private void button1_Click(object sender, EventArgs e)
         {
-            string email = LogInEmail.Text;
-            string password = LogInPassword.Text;
 
-            _response = _customerService.logIn(email, password);
-            _customer = _response.customer;
-            message.Text = _response.message;
+            var emailValidator = new EmailAddressAttribute();
+            bool email = emailValidator.IsValid(LogInEmail.Text);
 
-            if (message.Text == "Authenticated")
+            bool password = MyValidator.IsPassword(LogInPassword.Text);
+
+
+            if (email && password)
             {
-                LogIn.Hide();
-                Menu.Show();
-                message.Text = "";
-                LogInEmail.Text = "";
-                LogInPassword.Text = "";
+                _response = _customerService.logIn(LogInEmail.Text, LogInPassword.Text);
+                _customer = _response.customer;
+                LoginMessage1.Text = _response.message;
+
+                if (LoginMessage1.Text == "Authenticated")
+                {
+                    LogIn.Hide();
+                    Menu.Show();
+                    LoginMessage.Text = "";
+                    LogInEmail.Text = "";
+                    LogInPassword.Text = "";
+                    LoginMessage.Text = "";
+                    LoginMessage1.Text = "";
+                    LoginMessage2.Text = "";
+                }
+            }
+            else if(email){
+                LoginMessage.Text = "Proper password format";
+                LoginMessage2.Text = "Special char & alphanumeric";
+                LoginMessage1.Text = "Not Authenticated";
+            }
+            else
+            {
+                LoginMessage.Text = "Proper email format";
+                LoginMessage2.Text = "Special char & alphanumeric";
+                LoginMessage1.Text = "Not Authenticated";
             }
 
-
-
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
