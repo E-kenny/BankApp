@@ -1,1 +1,23 @@
-[{"Id":"2ed3d9b0-5a69-498b-a66e-a9d87ac3bb59","CustomerId":"ebdeb974-8d87-4bb4-9405-08a36efddc15","Number":"987654321","Owner":"Obiasogu Ekene","Type":"Current"},{"Id":"60f2d170-59c6-4c58-a26a-ec42686aa06d","CustomerId":"ebdeb974-8d87-4bb4-9405-08a36efddc15","Number":"987654322","Owner":"Obiasogu Ekene","Type":"Savings"},{"Id":"25389510-cadb-405e-89af-cecaecda5fad","CustomerId":"ebdeb974-8d87-4bb4-9405-08a36efddc15","Number":"987654321","Owner":"Obiasogu Ekene","Type":"Current"}]
+[
+  {
+    "Id": "2ed3d9b0-5a69-498b-a66e-a9d87ac3bb59",
+    "CustomerId": "ebdeb974-8d87-4bb4-9405-08a36efddc15",
+    "Number": "987654321",
+    "Owner": "Obiasogu Ekene",
+    "Type": "Current"
+  },
+  {
+    "Id": "60f2d170-59c6-4c58-a26a-ec42686aa06d",
+    "CustomerId": "ebdeb974-8d87-4bb4-9405-08a36efddc15",
+    "Number": "987654322",
+    "Owner": "Obiasogu Ekene",
+    "Type": "Savings"
+  },
+  {
+    "Id": "25389510-cadb-405e-89af-cecaecda5fad",
+    "CustomerId": "ebdeb974-8d87-4bb4-9405-08a36efddc15",
+    "Number": "987654321",
+    "Owner": "Obiasogu Ekene",
+    "Type": "Current"
+  }
+]

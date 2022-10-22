@@ -12,19 +12,6 @@ namespace BankAppWinForms.Utilities
         //public static Regex hasUpperChar = new Regex(@"[A-Z]+");
         public static Regex hasMinimum8Chars = new Regex(@".{8,}");
 
-        public Customer logIn(string email, string password, List<Customer> allCustomer)
-        {
-            Customer customer = null;
-
-
-            foreach (var single in allCustomer)
-            {
-
-                if (single.Email == email && single.Password == password) { customer = single; break; }
-            }
-            return customer;
-        }
-
 
         public bool IsValid(string str)
         {
